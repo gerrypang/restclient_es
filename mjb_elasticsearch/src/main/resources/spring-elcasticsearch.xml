@@ -9,6 +9,7 @@
 			http://www.springframework.org/schema/context 
 			http://www.springframework.org/schema/context/spring-context-3.2.xsd ">
     
+    <!-- 配置 rest client node节点信息  -->
     <bean name="clusterNode" class="com.mjbmall.elasticsearch.core.ClusterNode">
     	<constructor-arg name="hosts">
     		<list>
@@ -18,6 +19,7 @@
     	</constructor-arg>
     </bean>
     
+    <!-- 将node节点 通过构造器注入 template  -->
     <bean name="templateRepository" class="com.mjbmall.elasticsearch.core.TemplateRepository" scope="prototype">
     	<constructor-arg name="clusterNode" ref="clusterNode"/>
     </bean>
