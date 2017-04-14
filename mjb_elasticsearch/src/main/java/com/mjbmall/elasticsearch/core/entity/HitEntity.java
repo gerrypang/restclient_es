@@ -3,14 +3,18 @@ package com.mjbmall.elasticsearch.core.entity;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
-
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * elasticsearch查询 search 返回查询结果 Hit 实体类
+ * @author Gerry_Pang
+ *
+ * @param <T>
+ */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HitEntity<T> implements Serializable {
 

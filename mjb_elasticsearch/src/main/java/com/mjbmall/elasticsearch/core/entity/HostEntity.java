@@ -2,6 +2,10 @@ package com.mjbmall.elasticsearch.core.entity;
 
 import java.io.Serializable;
 
+/**
+ * RistCient链接 Host实体类
+ * @author Gerry_Pang
+ */
 public class HostEntity implements Serializable{
 	
 	private static final long serialVersionUID = 3494524362451384269L;

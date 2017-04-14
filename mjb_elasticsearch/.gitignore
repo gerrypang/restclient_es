@@ -1,5 +1,6 @@
 #maven
-/target/
+target/
+log/
 
 #eclipse
 .settings/
@@ -7,3 +8,13 @@
 .classpath
 .project
 Servers/
+
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Mac
+.DS_Store
+
