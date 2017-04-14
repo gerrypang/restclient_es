@@ -1,6 +1,6 @@
 #maven
-target/
-log/
+/target/
+/log/
 
 #eclipse
 .settings/
