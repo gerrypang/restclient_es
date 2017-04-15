@@ -1,5 +1,5 @@
 # restclient_es
-基于Elasticsearch java client 5.2.2 <br/>
+基于Elasticsearch java client 5.2.2 搜索Demo<br/>
 使用技术包括：SpringMVC + Spring + Spring data core + jackson <br/>
 
 [reference]<br/>
