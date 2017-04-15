@@ -3,8 +3,6 @@ package com.mjbmall.elasticsearch.controller;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.List;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -16,18 +14,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.mjbmall.elasticsearch.core.controller.BaseController;
 import com.mjbmall.elasticsearch.core.entity.HitEntity;
 import com.mjbmall.elasticsearch.domain.Demotable;
 import com.mjbmall.elasticsearch.repositories.DemotableRepository;
 
 @Controller
 @RequestMapping("/search/demotable")
-public class DemotableController {
+public class DemotableController extends BaseController {
 
 	@Autowired
 	private DemotableRepository demotableRepository;
-	/** 日志类*/
-	private static final Logger logger = LoggerFactory.getLogger(DemotableController.class);
 	
     /**
      * List查询

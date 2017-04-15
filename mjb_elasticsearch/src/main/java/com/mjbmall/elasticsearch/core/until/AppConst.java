@@ -1,4 +1,4 @@
-package com.mjbmall.elasticsearch.domain;
+package com.mjbmall.elasticsearch.core.until;
 
 public class AppConst {
 	
