@@ -12,7 +12,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /**
  * elasticsearch查询 search 返回查询结果 Hit 实体类
  * @author Gerry_Pang
- *
  * @param <T>
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,8 +26,6 @@ public class HitEntity<T> implements Serializable {
 	private String id;
 	@JsonProperty("_score")
 	private double score;
-	@JsonProperty("found")
-	private boolean found;
 	@JsonProperty("_version")
 	private int version;
 	@JsonProperty("_source")
@@ -41,7 +38,7 @@ public class HitEntity<T> implements Serializable {
 		return new ToStringBuilder(this, ToStringStyle.MULTI_LINE_STYLE)
 				.append("_index", index).append("_type", type)
 				.append("_id", id).append("_score", score)
-				.append("found", found).append("_version", version)
+				.append("_version", version)
 				.append("_source", source).toString();
 	}
 
@@ -75,14 +72,6 @@ public class HitEntity<T> implements Serializable {
 
 	public void setScore(double score) {
 		this.score = score;
-	}
-
-	public boolean isFound() {
-		return found;
-	}
-
-	public void setFound(boolean found) {
-		this.found = found;
 	}
 
 	public int getVersion() {
