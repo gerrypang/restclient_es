@@ -27,7 +27,7 @@
 		<property name="objectMapper">
 			<bean class="com.fasterxml.jackson.databind.ObjectMapper">
 				<property name="serializationInclusion">
-                        <value type="com.fasterxml.jackson.annotation.JsonInclude.Include">NON_NULL</value>
+                	<value type="com.fasterxml.jackson.annotation.JsonInclude.Include">NON_NULL</value>
                 </property>
 			</bean>
 		</property>
@@ -40,7 +40,7 @@
 			<bean class="org.springframework.data.web.PageableHandlerMethodArgumentResolver"></bean>
 		</mvc:argument-resolvers>
 		<mvc:message-converters register-defaults="true">
-<!-- 			<ref bean="stringHttpMessageConverter" /> -->
+			<!-- <ref bean="stringHttpMessageConverter" /> -->
 			<ref bean="mappingJackson2HttpMessageConverter" />
 		</mvc:message-converters>
 	</mvc:annotation-driven>
