@@ -2,6 +2,7 @@
 基于Elasticsearch java client 5.2.2 搜索Demo<br/>
 使用技术包括：SpringMVC + Spring + Spring data core + jackson <br/>
 
+
 【功能简介】<br/>
 1、查询功能可以通过post和get两种请求方式，支持对结果分页，支对特点字段排序。<br/>
 2、查询结果可以在页面显示，并支持返回REST API格式数据。
