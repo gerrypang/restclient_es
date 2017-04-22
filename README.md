@@ -17,7 +17,7 @@ http://elasticsearch.cn/book/elasticsearch_definitive_guide_2.x/foreword_id.html
 https://github.com/medcl/elasticsearch-analysis-ik<br/>
 https://github.com/medcl/elasticsearch-analysis-pinyin<br/>
 
-3	Logstatsh使用手册
+3	Logstatsh使用手册<br/>
 https://www.elastic.co/guide/en/logstash/current/index.html<br/>
 
 4	Logstatsh 数据库同步<br/>
