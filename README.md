@@ -9,24 +9,24 @@
 
 
 【参考资料】<br/>
-1	Elasticserach使用手册<br/>
+1、Elasticserach使用手册<br/>
 https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html<br/>
 http://elasticsearch.cn/book/elasticsearch_definitive_guide_2.x/foreword_id.html<br/>
 
-2	Elasticserach分词插件<br/>
+2、Elasticserach分词插件<br/>
 https://github.com/medcl/elasticsearch-analysis-ik<br/>
 https://github.com/medcl/elasticsearch-analysis-pinyin<br/>
 
-3	Logstatsh使用手册<br/>
+3、Logstatsh使用手册<br/>
 https://www.elastic.co/guide/en/logstash/current/index.html<br/>
 
-4	Logstatsh 数据库同步<br/>
+4、Logstatsh 数据库同步<br/>
 https://www.elastic.co/guide/en/logstash/current/plugins-inputs-jdbc.html<br/>
 https://www.elastic.co/blog/logstash-jdbc-input-plugin<br/>
 http://blog.csdn.net/laoyang360/article/details/51747266<br/>
 
-5	Elasticserach & Logstatsh 数据库同步机制<br/>
+5、Elasticserach & Logstatsh 数据库同步机制<br/>
 https://qbox.io/blog/migrating-mysql-data-into-elasticsearch-using-logstash<br/>
 
-6	其他<br/>
+6、其他<br/>
 http://www.cnblogs.com/xing901022/p/4704319.html<br/>
