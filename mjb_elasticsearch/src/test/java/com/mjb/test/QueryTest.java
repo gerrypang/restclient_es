@@ -1,8 +1,10 @@
 package com.mjb.test;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
+import org.apache.commons.lang3.time.DateFormatUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.data.domain.Page;
@@ -58,6 +60,11 @@ public class QueryTest {
 			e.printStackTrace();
 		}
     }
+    
+    public static void main(String[] args) {
+    	String date = DateFormatUtils.format(Calendar.getInstance(), "yyyy-MM-dd HH:mm:ss");
+    	System.out.println(date);
+	}
 
 	public ClusterNode getClusterNode() {
 		return clusterNode;

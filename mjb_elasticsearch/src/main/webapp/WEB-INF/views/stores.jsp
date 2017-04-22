@@ -28,19 +28,20 @@
 				<thead>
 					<tr>
 						<th>ID</th>
-						<th>mjbProductName</th>
-						<th>mjbStoreId</th>
-						<th>mjbStoreName</th>
-						<th>mjbCatalogId</th>
-						<th>mjbCatalogName</th>
-						<th>mjbBrandId</th>
-						<th>mjbBrandName</th>
-						<th>introduce</th>
-						<th>searchKey</th>
-						<th>title</th>
+						<th>storeName</th>
+						<th>officeId</th>
+						<th>officeName</th>
+						<th>areaId</th>
+						<th>areaName</th>
+						<th>typeId</th>
+						<th>typeName</th>
+						<th>address</th>
 						<th>keywords</th>
 						<th>description</th>
+						<th>isvip</th>
 						<th>status</th>
+						<th>availFrom</th>
+						<th>availTo</th>
 						<th>delFlag</th>
 					</tr>
 				</thead>
@@ -86,19 +87,20 @@
 						if(content != null ){
 							content.forEach(function(entry){
 								array.push('<tr><td>' + entry._id 
-										+ '</td><td>' + entry._source.mjbProductName 
-										+ '</td><td>' + entry._source.mjbStoreId 
-										+ '</td><td>' + entry._source.mjbStoreName 
-										+ '</td><td>' + entry._source.mjbCatalogId 
-										+ '</td><td>' + entry._source.mjbCatalogName 
-										+ '</td><td>' + entry._source.mjbBrandId 
-										+ '</td><td>' + entry._source.mjbBrandName 
-										+ '</td><td>' + entry._source.introduce 
-										+ '</td><td>' + entry._source.searchKey 
-										+ '</td><td>' + entry._source.title 
+										+ '</td><td>' + entry._source.storeName 
+										+ '</td><td>' + entry._source.officeId 
+										+ '</td><td>' + entry._source.officeName 
+										+ '</td><td>' + entry._source.areaId 
+										+ '</td><td>' + entry._source.areaName 
+										+ '</td><td>' + entry._source.typeId 
+										+ '</td><td>' + entry._source.typeName 
+										+ '</td><td>' + entry._source.address 
 										+ '</td><td>' + entry._source.keywords 
 										+ '</td><td>' + entry._source.description 
+										+ '</td><td>' + entry._source.isvip 
 										+ '</td><td>' + entry._source.status 
+										+ '</td><td>' + entry._source.availFrom 
+										+ '</td><td>' + entry._source.availTo 
 										+ '</td><td>' + entry._source.delFlag 
 										+ '</td></tr>');
 							});

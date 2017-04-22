@@ -8,43 +8,6 @@
 			http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd 
 			http://www.springframework.org/schema/context 
 			http://www.springframework.org/schema/context/spring-context-3.2.xsd ">
-			
-	<!-- 设置对字符串的消息转换器 -->
-<!-- 	<bean id="stringHttpMessageConverter" class="org.springframework.http.converter.StringHttpMessageConverter"> -->
-<!-- 		<property name="supportedMediaTypes"> -->
-<!-- 		    <list> -->
-<!-- 				<value>text/plain;charset=UTF-8</value> -->
-<!-- 				<value>application/json;charset=UTF-8</value> -->
-<!-- 		    </list> -->
-<!-- 		</property> -->
-<!-- 	</bean> -->
-	
-	<!-- 避免IE执行AJAX时,返回JSON出现下载文件 -->
-	<!-- Jackson 是Spring 自带的功能 -->
-	<bean id="mappingJackson2HttpMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
-		<property name="prefixJson" value="false" />
-		<property name="supportedMediaTypes" value="application/json" />
-		<property name="objectMapper">
-			<bean class="com.fasterxml.jackson.databind.ObjectMapper">
-				<property name="serializationInclusion">
-                	<value type="com.fasterxml.jackson.annotation.JsonInclude.Include">NON_NULL</value>
-                </property>
-			</bean>
-		</property>
-	</bean>
-	
-	<!-- 添加注解驱动 -->
-	<mvc:annotation-driven>
-		<mvc:argument-resolvers>
-			<!-- Enables the Spring MVC @Controller programming model -->
-			<bean class="org.springframework.data.web.PageableHandlerMethodArgumentResolver"></bean>
-		</mvc:argument-resolvers>
-		<mvc:message-converters register-defaults="true">
-			<!-- <ref bean="stringHttpMessageConverter" /> -->
-			<ref bean="mappingJackson2HttpMessageConverter" />
-		</mvc:message-converters>
-	</mvc:annotation-driven>
-
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving 
 		up static resources in the ${webappRoot}/resources directory -->
 	<mvc:resources mapping="/resources/**" location="/resources/" />
@@ -53,6 +16,52 @@
 	<context:component-scan base-package="com.mjbmall.elasticsearch">
 		<context:include-filter type="regex" expression="com\.mjbmall\.elasticsearch\..*controller.*" />
 	</context:component-scan>
+				
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
+			
+	<!-- 设置对字符串的消息转换器 -->
+	<bean id="stringHttpMessageConverter" class="org.springframework.http.converter.StringHttpMessageConverter">
+		<property name="supportedMediaTypes">
+		    <list>
+				<value>text/plain; charset=UTF-8</value>
+				<value>application/json; charset=UTF-8</value>
+				<value>application/x-www-form-urlencoded; charset=UTF-8</value>
+				<value>text/plain; charset=UTF-8</value>
+				<value>text/html; charset=UTF-8</value>
+				<value>text/html; charset=UTF-8</value>
+		    </list>
+		</property>
+	</bean>
+	
+	<!-- 避免IE执行AJAX时,返回JSON出现下载文件 -->
+	<!-- Jackson 是Spring 自带的功能 -->
+	<bean id="mappingJackson2HttpMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+		<property name="supportedMediaTypes" value="application/json" />
+		<property name="objectMapper">
+			<bean class="com.fasterxml.jackson.databind.ObjectMapper">
+				<property name="serializationInclusion">
+                	<value type="com.fasterxml.jackson.annotation.JsonInclude.Include">NON_NULL</value>
+                </property>
+				<property name="dateFormat">
+					<bean class="java.text.SimpleDateFormat">
+						<constructor-arg type="java.lang.String" value="yyyy-MM-dd HH:mm:ss" />
+					</bean>
+				</property> 
+			</bean>
+		</property>
+	</bean>
+	
+	<!-- 添加注解驱动 -->
+	<mvc:annotation-driven>
+<!-- 		<mvc:argument-resolvers> -->
+				<!-- Enables the Spring MVC @Controller programming model --> 
+<!-- 			<bean class="org.springframework.data.web.PageableHandlerMethodArgumentResolver"></bean> -->
+<!-- 		</mvc:argument-resolvers> -->
+		<mvc:message-converters>
+			<ref bean="stringHttpMessageConverter" />
+			<ref bean="mappingJackson2HttpMessageConverter" />
+		</mvc:message-converters>
+	</mvc:annotation-driven>
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

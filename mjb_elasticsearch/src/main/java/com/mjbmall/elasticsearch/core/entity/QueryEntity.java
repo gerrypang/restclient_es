@@ -8,7 +8,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /**
  * elasticsearch查询 search 返回查询结果对象
  * @author Gerry_Pang
- *
  * @param <T>
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)

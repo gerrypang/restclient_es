@@ -19,8 +19,9 @@
 			<h1>Spring MVC + Spring Data Elasticsearch Example</h1>
 			<ol>
 				<li><a href="${ctx}/productpage">Use <b>Page</b> Product Search </a></li>
-				<li><a href="${ctx}/bookpage">Use <b>Page</b> Book Search </a></li>
-				<li><a href="${ctx}/demopage">Use <b>Page</b> Book Search </a></li>
+				<li><a href="${ctx}/storepage">Use <b>Page</b> Store Search </a></li>
+<%-- 				<li><a href="${ctx}/bookpage">Use <b>Page</b> Book Search </a></li> --%>
+<%-- 				<li><a href="${ctx}/demopage">Use <b>Page</b> demo Search </a></li> --%>
 			</ol>
 		</div>
 	</div>

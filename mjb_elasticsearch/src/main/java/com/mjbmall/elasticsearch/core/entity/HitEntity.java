@@ -2,9 +2,12 @@ package com.mjbmall.elasticsearch.core.entity;
 
 import java.io.Serializable;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -30,6 +33,9 @@ public class HitEntity<T> implements Serializable {
 	private int version;
 	@JsonProperty("_source")
 	private T source;
+	@JsonProperty("sort")
+	private List<String> sort;
+	
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 	
@@ -39,7 +45,8 @@ public class HitEntity<T> implements Serializable {
 				.append("_index", index).append("_type", type)
 				.append("_id", id).append("_score", score)
 				.append("_version", version)
-				.append("_source", source).toString();
+				.append("_source", source)
+				.append("sort", sort).toString();
 	}
 
 	public String getIndex() {

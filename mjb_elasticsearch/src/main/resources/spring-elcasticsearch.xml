@@ -13,8 +13,10 @@
     <bean name="clusterNode" class="com.mjbmall.elasticsearch.core.ClusterNode">
     	<constructor-arg name="hosts">
     		<list>
-				<!-- <value>192.168.100.128:9200</value> -->
-				<value>192.168.1.117:9200</value>
+    			<!-- elasticsearch 外网地址    注：上线后把此条注释 -->
+				<value>47.93.114.190:9200</value>
+    			<!-- elasticsearch 内网地址   -->
+<!-- 				<value>10.30.46.160:9200</value> -->
     		</list>
     	</constructor-arg>
     </bean>
@@ -23,5 +25,4 @@
     <bean name="templateRepository" class="com.mjbmall.elasticsearch.core.TemplateRepository" scope="prototype">
     	<constructor-arg name="clusterNode" ref="clusterNode"/>
     </bean>
-    
 </beans>

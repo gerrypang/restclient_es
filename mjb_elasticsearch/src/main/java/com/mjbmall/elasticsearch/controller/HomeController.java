@@ -29,14 +29,26 @@ public class HomeController extends BaseController{
 
 	@RequestMapping(value = "/productpage", method = RequestMethod.GET)
 	public String pageable(Locale locale, Model model, String query) {
-		model.addAttribute("url", "./search/page");
+		model.addAttribute("url", "./search/product/page");
 		return "products";
 	}
 
 	@RequestMapping(value = "/productlist", method = RequestMethod.GET)
 	public String requestparam(Locale locale, Model model, String query) {
-		model.addAttribute("url", "./search/list");
+		model.addAttribute("url", "./search/product/list");
 		return "products";
+	}
+	
+	@RequestMapping(value = "/storepage", method = RequestMethod.GET)
+	public String storepage(Locale locale, Model model, String query) {
+		model.addAttribute("url", "./search/store/page");
+		return "stores";
+	}
+	
+	@RequestMapping(value = "/storelist", method = RequestMethod.GET)
+	public String storelist(Locale locale, Model model, String query) {
+		model.addAttribute("url", "./search/store/list");
+		return "stores";
 	}
 	
 	@RequestMapping(value = "/bookpage", method = RequestMethod.GET)
